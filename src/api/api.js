@@ -27,6 +27,22 @@ export const vinCheckAPI = {
     },
     getVinData3(vin) {
         return instance.get(`https://marketvalue.vinaudit.com/getmarketvalue.php?key=1HB7ICF9L0GVH5Q&vin=` + vin + '&period=182&mileage=null&country=USA')
+    },
+
+    getVinDataNode1(vin) {
+        //return instance.get(`http://localhost:3000/vin=` + vin)
+        //return instance.get(`http://localhost:3000/`)
+        //return instance.get(`http://localhost:3000/about?vin=` + vin) //yo1 last
+        return instance.get(`http://vinchecknode-env.eba-7fef4ktn.us-east-2.elasticbeanstalk.com/about?vin=` + vin) //yo1 last
+
+        /*return instance.get(`http://localhost:3000/about?vin=` + vin,)
+            .then(response => {
+                    return response.data;
+                }
+            )*/
+    },
+    getVinDataNode2(url) {
+        return instance.get(url)
     }
     // getStatus(userId) {
     //     return instance.get(`profile/status/` + userId)
